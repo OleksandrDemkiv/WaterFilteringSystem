@@ -1,7 +1,8 @@
 main {
     min-width: 100%;
     max-height: 720px;
-    overflow: hidden;    position: relative;
+    overflow: hidden;
+    position: relative;
     text-align: center;
 
 }
@@ -35,22 +36,24 @@ section .social {
     margin-top: 40px;
 }
 
-section .social i {
-    width: 55px;
-    height: 55px;
+section .social svg {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
     border-radius: 50%;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     line-height: 55px;
     font-size: 25px;
     transition: .5s ease;
     margin-right: 5px;
+    fill: #fff;
 }
 
-section .social i:last-child {
+section .social svg:last-child {
     margin-right: 0;
 }
 
-section .social i:hover {
+section .social svg:hover {
     border-color: #0b8ffe;
     cursor: pointer;
     box-shadow: 0 0 20px #0b8ffe;
@@ -65,7 +68,21 @@ section form {
     justify-content: space-between;
 }
 
+section form .astrisk:after {
+    content:" *"; 
+    color: #e32;
+    position: absolute; 
+    margin: 0px 0px 0px -20px; 
+    font-size: x-large; 
+    padding: 0 5px 0 0; 
+}
+
+section form div {
+    width: 100%;
+}
+
 section form input {
+    width: 100%;
     height: 40px;
     background-color: transparent;
     padding: 5px 0px;
@@ -91,13 +108,13 @@ section form input:focus,section form textarea:focus {
     box-shadow: 0px 0px 20px rgba(11, 143, 254, 0.42);
 }
 
-section form [name="name"],
-section form [name="email"],
-section form [name="phone"] {
+section form div.name,
+section form div.email,
+section form div.phone {
     width: 31%;
 }
 
-section form [name="subject"] {
+section form div.subject {
     width: 100%;
     margin-bottom: 80px;
 }
@@ -113,6 +130,20 @@ section form button {
     overflow: hidden;
 }
 
+section form button span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section form button svg {
+    fill: #fff;
+    height: 24px;
+    width: 24px;
+    padding-left: 5px;
+}
+
 section form button:hover {
     color: #0b8ffe;
     border-color: #0b8ffe;
@@ -120,7 +151,7 @@ section form button:hover {
     cursor: pointer
 }
 
-section form button:hover div {
+section form button:hover span {
     transform: scale(2) translateX(200px);
     transition: 1s ease-in-out;
     color: transparent;
@@ -130,29 +161,28 @@ section form button:hover div {
     section {
         padding-top: 40px;
     }
+
     section .social {
         margin-top: 30px;        
     }
-    section .social i {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-        line-height: 40px;
-    }
+
     section form {
         width: 90%;
         margin: 40px auto 0;
         flex-direction: column;
         align-items: center;
     }
-    section form input {
+
+    section form div {
         width: 95% !important;
         margin-bottom: 15px !important;
     }
-    section form textarea {
+    
+    section form div>textarea {
         width: 95%;
         margin-top: 15px;
     }
+
     section form button {
         width: 95%;
     }
@@ -164,17 +194,19 @@ section form button:hover div {
         width: 90%;
         margin: 60px auto 0;
     }
-    section form [name="name"],
-    section form [name="email"] {
+
+    section form div.name,
+    section form div.email {
         width: 48%;
     }
-    section form [name="phone"],
-    section form [name="website"] {
-        width: 48%;
+
+    section form div.phone {
+        width:100%;
         margin-bottom: 30px;
     }
+
+
     section form [name="subject"] {
         width: 100%;
     }
-    
 }

@@ -2,6 +2,9 @@
     box-sizing:border-box;
     margin:0;
     padding:0;
+}
+
+body {
     font-family:sans-serif;
 }
 
@@ -17,12 +20,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}
-
-header:after {
-    content:"";
-    clear:both;
-    display:block;
 }
 
 a, h1 {
@@ -68,6 +65,7 @@ nav li{
 /* NAV DROPDOWN */
 nav .dropdown{
     position:relative;
+    z-index: 9999999;
 }
 
 nav li a{
@@ -89,10 +87,6 @@ nav li:hover ul{
 
 nav li li{
     float:none;
-}
-
-nav .dropdown {
-    z-index: 9999999;
 }
 
 nav .dropdown ul{
@@ -127,18 +121,6 @@ nav li li a:hover{
     background:#c9d0d5;
 }
 
-/* RESPONSIVE PART */
-@media only screen and (max-width: 1170px) {
-    nav >ul>li >a{padding:35px 15px}
-}
-
-@media only screen and (max-width: 1050px) {
-    header{flex-flow: column;}
-    nav >ul>li >a{padding:15px 15px}
-    nav .dropdown ul {padding: 0;}
-    nav .dropdown li a {padding: 10px -10px 10px 10px;}
-}
-
 footer{
     position: relative;
     bottom: 0;
@@ -151,6 +133,7 @@ footer{
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
     display: flex;
     align-items: center;
@@ -158,44 +141,57 @@ footer{
     flex-direction: column;
     text-align: center;
 }
+
 .footer-content h3{
     font-size: 2.1rem;
     font-weight: 500;
     text-transform: capitalize;
     line-height: 3rem;
 }
-.footer-content p{
+
+.footer-content p {
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
     color: #cacdd2;
 }
-.socials{
+
+.socials {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
 }
-.socials li{
+
+.socials li {
     margin: 0 10px;
 }
-.socials a{
+
+.socials a {
     text-decoration: none;
     color: #fff;
     border: 1.1px solid white;
     padding: 5px;
     border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.socials a i{
+
+.socials a svg{
     font-size: 1.1rem;
-    width: 20px;
+    width: 24px;
+    height: 24px;
+    fill: #fff;
 
     transition: color .4s ease;
 }
-.socials a:hover i{
-    color: #c9d0d5;
+
+.socials a:hover svg{
+    fill: #c9d0d5;
 }
 
 .footer-bottom{
@@ -205,39 +201,55 @@ footer{
     padding-bottom: 40px;
     text-align: center;
 }
+
+.footer-bottom h3 {
+    font-size: 3.7vw;
+}
+
 .footer-bottom p{
     float: left;
-    font-size: 14px;
+    font-size: 15px;
     word-spacing: 2px;
     text-transform: capitalize;
 }
+
 .footer-bottom p a{
     color:#44bae8;
     font-size: 16px;
     text-decoration: none;
 }
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
+
 .footer-menu{
     float: right;
-
 }
+
 .footer-menu ul{
     display: flex;
 }
+
 .footer-menu ul li{
-padding-right: 10px;
-display: block;
+    padding-right: 10px;
+    display: block;
 }
+
 .footer-menu ul li a{
     color: #cfd2d6;
     text-decoration: none;
 }
+
 .footer-menu ul li a:hover{
-        color: #c9d0d5;
+    color: #c9d0d5;
+}
+
+/* RESPONSIVE PART */
+@media only screen and (max-width: 1170px) {
+    nav >ul>li >a{padding:35px 15px}
+}
+
+@media only screen and (max-width: 1050px) {
+    header{flex-flow: column;}
+    nav >ul>li >a{padding:15px 15px}
+    nav .dropdown ul {padding: 0;}
 }
 
 @media (max-width:500px) {
